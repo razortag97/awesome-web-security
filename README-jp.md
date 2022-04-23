@@ -18,9 +18,9 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 
 ## Contents
 
+- [Digests](#digests)
 - [Forums](#forums)
 - [Introduction](#intro)
-  - [Tips](#tips)
   - [XSS](#xss---cross-site-scripting)
   - [Prototype Pollution](#prototype-pollution)
   - [CSV Injection](#csv-injection)
@@ -50,8 +50,10 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
   - [Crypto](#crypto)
   - [Web Shell](#web-shell)
   - [OSINT](#osint)
-  - [Books](#books)
   - [DNS Rebinding](#dns-rebinding)
+  - [Deserialization](#deserialization)
+  - [OAuth](#oauth)
+  - [JWT](#jwt)
 - [Evasions](#evasions)
   - [XXE](#evasions-xxe)
   - [CSP](#evasions-csp)
@@ -71,10 +73,13 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
   - [Web Cache Poisoning](#tricks-web-cache-poisoning)
   - [Header Injection](#tricks-header-injection)
   - [URL](#tricks-url)
+  - [Deserialization](#tricks-deserialization)
+  - [OAuth](#tricks-oauth)
   - [Others](#tricks-others)
 - [Browser Exploitation](#browser-exploitation)
 - [PoCs](#pocs)
   - [Database](#pocs-database)
+- [Cheetsheets](#cheetsheets)
 - [Tools](#tools)
   - [Auditing](#tools-auditing)
   - [Command Injection](#tools-command-injection)
@@ -112,6 +117,17 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [Community](#community)
 - [Miscellaneous](#miscellaneous)
 
+## Digests
+
+- [Hacker101](https://www.hacker101.com/) - Written by [hackerone](https://www.hackerone.com/start-hacking).
+- [The Daily Swig - Web security digest](https://portswigger.net/daily-swig) - Written by [PortSwigger](https://portswigger.net/).
+- [Web Application Security Zone by Netsparker](https://www.netsparker.com/blog/web-security/) - Written by [Netsparker](https://www.netsparker.com/).
+- [Infosec Newbie](https://www.sneakymonkey.net/2017/04/23/infosec-newbie/) - Written by [Mark Robinson](https://www.sneakymonkey.net/).
+- [The Magic of Learning](https://bitvijays.github.io/) - Written by [@bitvijays](https://bitvijays.github.io/aboutme.html).
+- [CTF Field Guide](https://trailofbits.github.io/ctf/) - Written by [Trail of Bits](https://www.trailofbits.com/).
+- [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/) - Written by [@swisskyrepo](https://github.com/swisskyrepo).
+- [tl;dr sec](https://tldrsec.com/) - Weekly summary of top security tools, blog posts, and security research.
+
 ## Forums
 
 - [Phrack Magazine](http://www.phrack.org/) - Ezine written by and for hackers.
@@ -123,17 +139,6 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 
 <a name="intro"></a>
 ## Introduction
-
-<a name="tips"></a>
-### Tips
-
-- [Hacker101](https://www.hacker101.com/) - Written by [hackerone](https://www.hackerone.com/start-hacking).
-- [The Daily Swig - Web security digest](https://portswigger.net/daily-swig) - Written by [PortSwigger](https://portswigger.net/).
-- [Web Application Security Zone by Netsparker](https://www.netsparker.com/blog/web-security/) - Written by [Netsparker](https://www.netsparker.com/).
-- [Infosec Newbie](https://www.sneakymonkey.net/2017/04/23/infosec-newbie/) - Written by [Mark Robinson](https://www.sneakymonkey.net/).
-- [The Magic of Learning](https://bitvijays.github.io/) - Written by [@bitvijays](https://bitvijays.github.io/aboutme.html).
-- [CTF Field Guide](https://trailofbits.github.io/ctf/) - Written by [Trail of Bits](https://www.trailofbits.com/).
-- [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/) - Written by [@swisskyrepo](https://github.com/swisskyrepo).
 
 <a name="xss"></a>
 ### XSS - Cross-Site Scripting
@@ -153,6 +158,8 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 ### Prototype Pollution
 
 - [Prototype pollution attack in NodeJS application](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf) - Written by [@HoLyVieR](https://github.com/HoLyVieR).
+- [Exploiting prototype pollution – RCE in Kibana (CVE-2019-7609)](https://research.securitum.com/prototype-pollution-rce-kibana-cve-2019-7609/) - Written by [@securitymb](https://twitter.com/securitymb).
+- [Real-world JS - 1](https://blog.p6.is/Real-World-JS-1/) - Written by [@po6ix](https://twitter.com/po6ix).
 
 <a name="csv-injection"></a>
 ### CSV Injection
@@ -275,6 +282,7 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 ### SSL/TLS
 
 - [SSL & TLS Penetration Testing](https://www.aptive.co.uk/blog/tls-ssl-security-testing/) - Written by [APTIVE](https://www.aptive.co.uk/).
+- [Practical introduction to SSL/TLS](https://github.com/Hakky54/mutual-tls-ssl) - Written by [@Hakky54](https://github.com/Hakky54).
 
 <a name="webmail"></a>
 ### Webmail
@@ -292,6 +300,7 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [PENETRATION TESTING AWS STORAGE: KICKING THE S3 BUCKET](https://rhinosecuritylabs.com/penetration-testing/penetration-testing-aws-storage/) - Written by Dwight Hohnstein from [Rhino Security Labs](https://rhinosecuritylabs.com/).
 - [AWS PENETRATION TESTING PART 1. S3 BUCKETS](https://www.virtuesecurity.com/aws-penetration-testing-part-1-s3-buckets/) - Written by [VirtueSecurity](https://www.virtuesecurity.com/).
 - [AWS PENETRATION TESTING PART 2. S3, IAM, EC2](https://www.virtuesecurity.com/aws-penetration-testing-part-2-s3-iam-ec2/) - Written by [VirtueSecurity](https://www.virtuesecurity.com/).
+- [Misadventures in AWS](https://labs.f-secure.com/blog/misadventures-in-aws) - Written by Christian Demko
 
 <a name="azure"></a>
 ### Azure
@@ -312,6 +321,7 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 ### Crypto
 
 - [Applied Crypto Hardening](https://bettercrypto.org/) - Written by [The bettercrypto.org Team](https://bettercrypto.org/).
+- [What is a Side-Channel Attack ?](https://www.csoonline.com/article/3388647/what-is-a-side-channel-attack-how-these-end-runs-around-encryption-put-everyone-at-risk.html) - Written by [J.M Porup](https://www.csoonline.com/author/J.M.-Porup/).
 
 <a name="web-shell"></a>
 ### Web Shell
@@ -327,16 +337,31 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [102 Deep Dive in the Dark Web OSINT Style Kirby Plessas](https://www.youtube.com/watch?v=fzd3zkAI_o4) - Presented by [@kirbstr](https://twitter.com/kirbstr).
 - [The most complete guide to finding anyone’s email](https://www.blurbiz.io/blog/the-most-complete-guide-to-finding-anyones-email) - Written by [Timur Daudpota](https://www.blurbiz.io/).
 
-<a name="books"></a>
-### Books
-
-- [XSS Cheat Sheet - 2018 Edition](https://leanpub.com/xss) - Written by [@brutelogic](https://twitter.com/brutelogic).
-
 <a name="dns-rebinding"></a>
 ### DNS Rebinding
 
 - [Attacking Private Networks from the Internet with DNS Rebinding](https://medium.com/@brannondorsey/attacking-private-networks-from-the-internet-with-dns-rebinding-ea7098a2d325) - Written by [@brannondorsey](https://medium.com/@brannondorsey)
 - [Hacking home routers from the Internet](https://medium.com/@radekk/hackers-can-get-access-to-your-home-router-1ddadd12a7a7) - Written by [@radekk](https://medium.com/@radekk)
+
+<a name="deserialization"></a>
+### Deserialization
+
+- [What Do WebLogic, WebSphere, JBoss, Jenkins, OpenNMS, and Your Application Have in Common? This Vulnerability.](https://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/) - Written by [@breenmachine](https://twitter.com/breenmachine).
+- [Attacking .NET deserialization](https://www.youtube.com/watch?v=eDfGpu3iE4Q) - Written by [@pwntester](https://twitter.com/pwntester).
+- [.NET Roulette: Exploiting Insecure Deserialization in Telerik UI](https://www.youtube.com/watch?v=--6PiuvBGAU) - Written by [@noperator](https://twitter.com/noperator).
+- [How to exploit the DotNetNuke Cookie Deserialization](https://pentest-tools.com/blog/exploit-dotnetnuke-cookie-deserialization/) - Written by [CRISTIAN CORNEA](https://pentest-tools.com/blog/author/pentest-cristian/).
+- [HOW TO EXPLOIT LIFERAY CVE-2020-7961 : QUICK JOURNEY TO POC](https://www.synacktiv.com/en/publications/how-to-exploit-liferay-cve-2020-7961-quick-journey-to-poc.html) - Written by [@synacktiv](https://twitter.com/synacktiv).
+
+<a name="oauth"></a>
+### OAuth
+
+- [Introduction to OAuth 2.0 and OpenID Connect](https://pragmaticwebsecurity.com/courses/introduction-oauth-oidc.html) - Written by [@PhilippeDeRyck](https://twitter.com/PhilippeDeRyck).
+- [What is going on with OAuth 2.0? And why you should not use it for authentication.](https://medium.com/securing/what-is-going-on-with-oauth-2-0-and-why-you-should-not-use-it-for-authentication-5f47597b2611) - Written by [@damianrusinek](https://medium.com/@damianrusinek).
+
+<a name="jwt"></a>
+### JWT
+
+- [Hardcoded secrets, unverified tokens, and other common JWT mistakes](https://r2c.dev/blog/2020/hardcoded-secrets-unverified-tokens-and-other-common-jwt-mistakes/) - Written by [@ermil0v](https://twitter.com/ermil0v).
 
 ## Evasions
 
@@ -383,6 +408,7 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [Exploiting CSRF on JSON endpoints with Flash and redirects](https://blog.appsecco.com/exploiting-csrf-on-json-endpoints-with-flash-and-redirects-681d4ad6b31b) - Written by [@riyazwalikar](https://blog.appsecco.com/@riyazwalikar).
 - [Stealing CSRF tokens with CSS injection (without iFrames)](https://github.com/dxa4481/cssInjection) - Written by [@dxa4481](https://github.com/dxa4481).
 - [Cracking Java’s RNG for CSRF - Javax Faces and Why CSRF Token Randomness Matters](https://blog.securityevaluators.com/cracking-javas-rng-for-csrf-ea9cacd231d2) - Written by [@rramgattie](https://blog.securityevaluators.com/@rramgattie).
+- [If HttpOnly You Could Still CSRF… Of CORS you can!](https://medium.com/@_graphx/if-httponly-you-could-still-csrf-of-cors-you-can-5d7ee2c7443) - Written by [@GraphX](https://twitter.com/GraphX).
 
 <a name="tricks-clickjacking"></a>
 ### Clickjacking
@@ -423,6 +449,7 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [XSS in Google Colaboratory + CSP bypass](https://blog.bentkowski.info/2018/06/xss-in-google-colaboratory-csp-bypass.html) - Written by [Michał Bentkowski](https://blog.bentkowski.info/).
 - [Another XSS in Google Colaboratory](https://blog.bentkowski.info/2018/09/another-xss-in-google-colaboratory.html) - Written by [Michał Bentkowski](https://blog.bentkowski.info/).
 - [</script> is filtered ?](https://twitter.com/strukt93/status/931586377665331200) - Written by [@strukt93](https://twitter.com/strukt93).
+- [$20000 Facebook DOM XSS](https://vinothkumar.me/20000-facebook-dom-xss/) - Written by [@vinodsparrow](https://twitter.com/vinodsparrow).
 
 <a name="tricks-sql-injection"></a>
 ### SQL Injection
@@ -432,6 +459,7 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [GitHub Enterprise SQL Injection](http://blog.orange.tw/2017/01/bug-bounty-github-enterprise-sql-injection.html) - Written by [Orange](http://blog.orange.tw/).
 - [Making a Blind SQL Injection a little less blind](https://medium.com/@tomnomnom/making-a-blind-sql-injection-a-little-less-blind-428dcb614ba8) - Written by [TomNomNom](https://twitter.com/TomNomNom).
 - [Red Team Tales 0x01: From MSSQL to RCE](https://www.tarlogic.com/en/blog/red-team-tales-0x01/) - Written by [Tarlogic](https://www.tarlogic.com/en/cybersecurity-blog/).
+- [SQL INJECTION AND POSTGRES - AN ADVENTURE TO EVENTUAL RCE](https://pulsesecurity.co.nz/articles/postgres-sqli) - Written by [@denandz](https://github.com/denandz).
 
 <a name="tricks-nosql-injection"></a>
 ### NoSQL Injection
@@ -491,6 +519,16 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [Unicode Domains are bad and you should feel bad for supporting them](https://www.vgrsec.com/post20170219.html) - Written by [VRGSEC](https://www.vgrsec.com/).
 - [[dev.twitter.com] XSS](http://blog.blackfan.ru/2017/09/devtwittercom-xss.html) - Written by [Sergey Bobrov](http://blog.blackfan.ru/).
 
+<a name="tricks-deserialization"></a>
+### Deserialization
+
+- [ASP.NET resource files (.RESX) and deserialisation issues](https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/august/aspnet-resource-files-resx-and-deserialisation-issues/) - Written by [@irsdl](https://twitter.com/irsdl).
+
+<a name="tricks-oauth"></a>
+### OAuth
+
+- [Facebook OAuth Framework Vulnerability](https://www.amolbaikar.com/facebook-oauth-framework-vulnerability/) - Written by [@AmolBaikar](https://twitter.com/AmolBaikar).
+
 <a name="tricks-others"></a>
 ### Others
 
@@ -516,6 +554,8 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [How do we Stop Spilling the Beans Across Origins?](https://docs.google.com/document/d/1cbL-X0kV_tQ5rL8XJ3lXkV-j0pt_CfTu5ZSzYrncPDc/) - Written by [aaj at google.com](aaj@google.com) and [mkwst at google.com](mkwst@google.com).
 - [Setting arbitrary request headers in Chromium via CRLF injection](https://blog.bentkowski.info/2018/06/setting-arbitrary-request-headers-in.html) - Written by [Michał Bentkowski](https://blog.bentkowski.info/).
 - [I’m harvesting credit card numbers and passwords from your site. Here’s how.](https://hackernoon.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5) - Written by [David Gilbertson](https://hackernoon.com/@david.gilbertson).
+- [Sending arbitrary IPC messages via overriding Function.prototype.apply](https://hackerone.com/reports/188086) - Written by [@kinugawamasato](https://twitter.com/kinugawamasato).
+- [Take Advantage of Out-of-Scope Domains in Bug Bounty Programs](https://ahussam.me/Take-Advantage-of-Out-of-Scope-Domains-in-Bug-Bounty/) - Written by [@Abdulahhusam](https://twitter.com/Abdulahhusam).
 
 ### Backend (core of Browser implementation, and often refers to C or C++ part)
 
@@ -528,6 +568,9 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [PUSHING WEBKIT'S BUTTONS WITH A MOBILE PWN2OWN EXPLOIT](https://www.zerodayinitiative.com/blog/2018/2/12/pushing-webkits-buttons-with-a-mobile-pwn2own-exploit) - Written by [@wanderingglitch](https://twitter.com/wanderingglitch).
 - [A Methodical Approach to Browser Exploitation](https://blog.ret2.io/2018/06/05/pwn2own-2018-exploit-development/) - Written by [RET2 SYSTEMS, INC](https://blog.ret2.io/).
 - [CVE-2017-2446 or JSC::JSGlobalObject::isHavingABadTime.](https://doar-e.github.io/blog/2018/07/14/cve-2017-2446-or-jscjsglobalobjectishavingabadtime/) - Written by [Diary of a reverse-engineer](https://doar-e.github.io/).
+- [CLEANLY ESCAPING THE CHROME SANDBOX](https://theori.io/research/escaping-chrome-sandbox) - Written by [@tjbecker_](https://twitter.com/tjbecker_).
+- [A Methodical Approach to Browser Exploitation](https://blog.ret2.io/2018/06/05/pwn2own-2018-exploit-development/) - Written by [@PatrickBiernat](https://twitter.com/PatrickBiernat), [@gaasedelen](https://twitter.com/gaasedelen) and [@itszn13](https://twitter.com/itszn13).
+- [How I got my first big bounty payout with Tesla](https://medium.com/heck-the-packet/how-i-got-my-first-big-bounty-payout-with-tesla-8d28b520162d) - Written by [@cj.fairhead](https://medium.com/@cj.fairhead).
 
 ## PoCs
 
@@ -540,6 +583,11 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [uxss-db](https://github.com/Metnew/uxss-db) - Collection of UXSS CVEs with PoCs by [@Metnew](https://github.com/Metnew).
 - [SPLOITUS](https://sploitus.com/) - Exploits & Tools Search Engine by [@i_bo0om](https://twitter.com/i_bo0om).
 - [Exploit Database](https://www.exploit-db.com/) - ultimate archive of Exploits, Shellcode, and Security Papers by [Offensive Security](https://www.offensive-security.com/).
+
+## Cheetsheets
+
+- [XSS Cheat Sheet - 2018 Edition](https://leanpub.com/xss) - Written by [@brutelogic](https://twitter.com/brutelogic).
+- [Capture the Flag CheatSheet](https://github.com/uppusaikiran/awesome-ctf-cheatsheet) - Written by [@uppusaikiran](https://github.com/uppusaikiran).
 
 ## Tools
 
@@ -618,6 +666,7 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [wpscan](https://github.com/wpscanteam/wpscan) - WPScan is a black box WordPress vulnerability scanner by [@wpscanteam](https://github.com/wpscanteam).
 - [JoomlaScan](https://github.com/drego85/JoomlaScan) - Free software to find the components installed in Joomla CMS, built out of the ashes of Joomscan by [@drego85](https://github.com/drego85).
 - [WAScan](https://github.com/m4ll0k/WAScan) - Is an open source web application security scanner that uses "black-box" method, created by [@m4ll0k](https://github.com/m4ll0k).
+- [Nuclei](https://github.com/projectdiscovery/nuclei) - Nuclei is a fast tool for configurable targeted scanning based on templates offering massive extensibility and ease of use by [@projectdiscovery](https://github.com/projectdiscovery).
 
 <a name="tools-penetration-testing"></a>
 ### Penetration Testing
@@ -638,6 +687,7 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [JShell](https://github.com/s0md3v/JShell) - Get a JavaScript shell with XSS by [@s0md3v](https://github.com/s0md3v).
 - [XSStrike](https://github.com/s0md3v/XSStrike) - XSStrike is a program which can fuzz and bruteforce parameters for XSS. It can also detect and bypass WAFs by [@s0md3v](https://github.com/s0md3v).
 - [xssor2](https://github.com/evilcos/xssor2) - XSS'OR - Hack with JavaScript by [@evilcos](https://github.com/evilcos).
+- [csp evaluator](https://csper.io/evaluator) - A tool for evaluating content-security-policies by [Csper](http://csper.io).
 
 <a name="tools-sql-injection"></a>
 #### SQL Injection
@@ -694,6 +744,7 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [DOMPurify](https://github.com/cure53/DOMPurify) - DOM-only, super-fast, uber-tolerant XSS sanitizer for HTML, MathML and SVG by [Cure53](https://cure53.de/).
 - [js-xss](https://github.com/leizongmin/js-xss) - Sanitize untrusted HTML (to prevent XSS) with a configuration specified by a Whitelist by [@leizongmin](https://github.com/leizongmin).
 - [Acra](https://github.com/cossacklabs/acra) - Client-side encryption engine for SQL databases, with strong selective encryption, SQL injections prevention and intrusion detection by [@cossacklabs](https://www.cossacklabs.com/).
+- [Csper](https://csper.io) - A set of tools for building/evaluating/monitoring content-security-policy to prevent/detect cross site scripting by [Csper](https://csper.io).
 
 <a name="tools-proxy"></a>
 ### Proxy
@@ -710,6 +761,7 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [Webshell-Sniper](https://github.com/WangYihang/Webshell-Sniper) - Manage your website via terminal by [@WangYihang](https://github.com/WangYihang).
 - [Reverse-Shell-Manager](https://github.com/WangYihang/Reverse-Shell-Manager) - Reverse Shell Manager via Terminal [@WangYihang](https://github.com/WangYihang).
 - [reverse-shell](https://github.com/lukechilds/reverse-shell) - Reverse Shell as a Service by [@lukechilds](https://github.com/lukechilds).
+- [PhpSploit](https://github.com/nil0x42/phpsploit) - Full-featured C2 framework which silently persists on webserver via evil PHP oneliner by [@nil0x42](https://github.com/nil0x42).
 
 <a name="tools-disassembler"></a>
 ### Disassembler
@@ -837,6 +889,10 @@ If you enjoy this awesome list and would like to support it, check out my [Patre
 - [Alexa Top 1 Million Security - Hacking the Big Ones](https://slashcrypto.org/data/itsecx2018.pdf) - Written by [@slashcrypto](https://twitter.com/slashcrypto).
 - [The bug bounty program that changed my life](http://10degres.net/the-bug-bounty-program-that-changed-my-life/) - Written by [Gwen](http://10degres.net/).
 - [List of bug bounty writeups](https://pentester.land/list-of-bug-bounty-writeups.html) - Written by [Mariem](https://pentester.land/).
+- [Implications of Loading .NET Assemblies](https://threatvector.cylance.com/en_us/home/implications-of-loading-net-assemblies.html) - Written by [Brian Wallace](https://threatvector.cylance.com/en_us/contributors/brian-wallace.html).
+- [WCTF2019: Gyotaku The Flag](https://westerns.tokyo/wctf2019-gtf/wctf2019-gtf-slides.pdf) - Written by [@t0nk42](https://twitter.com/t0nk42).
+- [How we abused Slack's TURN servers to gain access to internal services](https://www.rtcsec.com/2020/04/01-slack-webrtc-turn-compromise/) - Written by [@sandrogauci](https://twitter.com/sandrogauci).
+- [DOS File Path Magic Tricks](https://medium.com/walmartlabs/dos-file-path-magic-tricks-5eda7a7a85fa) - Written by [@clr2of8](https://medium.com/@clr2of8).
 
 ## Code of Conduct
 
